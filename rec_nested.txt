@@ -1,0 +1,15 @@
+const arraySum =(elements)=> {
+  let sumOfelements = 0; 
+  for (let i =0; i <elements.length;i++){
+    let currentElement = elements[i];
+
+    if(Array.isArray(currentElement)){
+      sumOfelements+=arraySum(currentElement);
+    }
+    else{
+      sumOfelements+=currentElement;
+    }
+  }
+  return sumOfelements
+}
+console.log(arraySum([1, [2, 3, [4]]]))
