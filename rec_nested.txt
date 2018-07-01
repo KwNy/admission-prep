@@ -13,3 +13,28 @@ const arraySum =(elements)=> {
   return sumOfelements
 }
 console.log(arraySum([1, [2, 3, [4]]]))
+
+//nested obj//
+
+const allSystemsGo =(myObject)=>{
+  for(let key in myObject){
+    let currentObj = myObject[key];
+
+    if(typeof currentObj === 'object' ){
+      let nestedOnj= allSystemsGo(currentObj);
+
+      if(!nestedOnj){
+        return false
+      }
+      }
+
+    else{
+        if(!currentObj){
+          return false};
+        }
+
+      // return sumOfall;
+}
+return true
+
+}
