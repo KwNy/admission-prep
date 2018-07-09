@@ -1,0 +1,10 @@
+patternToChange = 'aeiou'
+wishedPattern = 'AEIOU'
+
+myWord = 'whatever!'
+desiredOutput = ''
+
+for (letter of myWord)
+  desiredOutput += wishedPattern[patternToChange.indexOf(letter)] || letter
+  
+console.log(desiredOutput)
