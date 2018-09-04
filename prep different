@@ -1,0 +1,234 @@
+// const onlyOdds = (myNumber)=>{
+// let sum = 0;
+//     for(i=0;i<myNumber;i++){
+//         if(i%2===0){
+//             sum=sum+i;
+//         }
+//         else if(myNumber<1){return 0} 
+        
+//     }
+//     return sum;
+// }
+
+// onlyOdds(25)
+
+// const bacteriaTime = (mystart, myend)=>{
+// let time = 0; 
+// let bacteria =mystart;
+
+// for(i=0;i<myend;i++)
+// {
+//     if(mystart<myend)
+//     {
+//     time+=20;
+//     mystart*=2
+//     }
+//     else
+//     {return 'targetNum must be larger than currentNum'}
+
+// }
+
+// return time;
+
+// }
+
+// bacteriaTime(1,8)
+
+// const exponentiate = (base, power)=>
+// {
+//     if(power===0)
+//     {
+//         return 1
+//     }
+
+//     let result = 1;
+
+//     for(let i =0;i<power;i++)
+//     {
+//         result*=base;
+//         console.log("=>"+result)
+//     }
+//     return result
+// }
+
+// exponentiate(2,3)
+
+const mySlice = (orgString, startIndx=0, endIndx=orgString.length-1)=>
+{
+    let result = "";
+
+    for(let i=startIndx;i<endIndx;i++)
+    {
+        result+=orgString[i];
+    }
+  
+    return result
+}
+
+mySlice("las33",1,6)
+
+
+// YOUR CODE BELOW
+// const everyWhichWay = (myarr)=>
+// {
+//   let resultOffirstTwo= 0;
+  
+//   for(i=0;i<1;i++){
+//     let curEl = myarr[i];
+//     let next = myarr[i+1];
+//     let third = myarr[i+2];
+//     console.log("=>"+myarr[i])
+//     if(curEl+next===third)
+//       {
+//         return "sum";
+//       }
+
+//         else if(curEl-next===third)
+//     {
+//     return "difference"
+//     }
+//     else if(curEl*next===third)
+//     {
+//       return "product"
+//     }
+//     else if(curEl/next===third)
+//     {
+//       return "fraction"
+
+//     }
+//       return null
+
+//   }
+
+// }
+
+// everyWhichWay([1,3,8])
+function oddNumbers(l, r) {
+    let numbers=[];
+    for(let i=l;i<=r;i++)
+        {
+            if(i%2!=0)
+                {
+                    numbers.push(i.toString());
+                }
+
+        }
+    return numbers;
+
+
+}
+
+oddNumbers(1,7)
+
+function findNumber(arr, k) {
+    for(i=0;i<arr.length;i++)
+       {
+            if(arr[i]===k)
+            {
+            return "YES"
+            }
+            else
+            {
+            return "NO"
+            }
+        
+        }
+
+
+}
+
+
+function palindrome(str) {
+    let leftToright = "";
+    for(let i=1;i<str.length+1;i++)
+    {
+        let lastChar = str[str.length-i];
+        leftToright+=lastChar;
+        
+    }
+
+    if(leftToright.toLowerCase()===str.toLowerCase())
+    {
+      return "true"
+    }
+    else
+    {
+      return "false"
+    }
+
+
+}
+
+palindrome("aka")
+
+const firstRepeatingLetter=(myString)=>{
+  let alphabet ="aabcdefghijklmnopqrstuwyzAABCDEFGHIJKLEMNOPQRSTUWXYZ";
+  let myFirstOccurance = "";
+  for(let i=0;i<myString.length;i++)
+  {
+    let curEl =myString[i];
+    if(alphabet.indexOf(curEl)>=0)
+    {
+      for(let j=1;j<=myString.length;j++){
+        if(curEl===myString[j])
+        {
+          return myString[j]
+        }
+      }
+    }
+  }
+}
+
+firstRepeatingLetter("irraa")
+
+
+// EXPLANATION
+// A function call of getHeight(3)
+// height = 1
+// Number of Cycles = 3 (the argument passed to getHeight)
+// 1 is always the initial height
+// 1st Cycle - height * 2 --> height = 2
+// 2nd Cycle - height + 1 --> height = 3
+// 3rd Cycle - height * 2 --> height = 6
+// Return Value = 6
+
+const getHeight=(mycycle)=>{
+let cycle = mycycle;
+let height =1;
+for(let i=0;i<mycycle;i++)
+{ if(cycle%2!=0)
+  {
+    height*=2;
+    cycle--    
+  }
+  else if(cycle%2==0)
+  {
+    height++;
+    cycle--;
+  }
+}
+return height;
+
+}
+getHeight(3)
+
+// indexOf('helloWorld', 'World')
+// String to search - "helloWorld"
+// Query String - "world"
+// "world" is the string value to locate in "helloWorld"
+// Return Value - 5
+// The full string "World" starts at the fifth index
+
+const indexfind = (mystring, word)=>
+{
+  let pattern = word;
+  for(let i =0;i<=mystring.length-word.length;i++)
+  {
+    let curEl = mystring.slice(i,i+word.length);
+    console.log(curEl)
+    if (curEl===pattern)return i;
+  }
+  return -1
+}
+
+indexfind("hello","o")
